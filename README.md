@@ -1,11 +1,11 @@
 # awscli
 
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/saucelabs-ansible/awscli/master/LICENSE)
-[![Build Status](https://travis-ci.org/saucelabs-ansible/awscli.svg?branch=master)](https://travis-ci.org/saucelabs-ansible/awscli)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/awscli/master/LICENSE)
+[![Build Status](https://travis-ci.org/ansiblebit/awscli.svg?branch=master)](https://travis-ci.org/ansiblebit/awscli)
 
 [![Platform](http://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)](#)
 
-[![Project Stats](https://www.openhub.net/p/saucelabs-ansible-awscli/widgets/project_thin_badge.gif)](https://www.openhub.net/p/saucelabs-ansible-awscli/)
+[![Project Stats](https://www.openhub.net/p/ansiblebit-awscli/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-awscli/)
 
 Ansible role to install the [AWS command line interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) and
 configure the credentials and profiles.
@@ -17,6 +17,7 @@ configure the credentials and profiles.
 |:-:|:-:|:-:|:-:|
 | Debian | Ubuntu  | Precise | [![x86](http://img.shields.io/badge/x86-passed-006400.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 | Debian | Ubuntu  | Trusty  | [![x86](http://img.shields.io/badge/x86-passed-006400.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Debian | Ubuntu  | Xenial  | [![x86](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 
 
 ## Requirements
@@ -42,7 +43,7 @@ in `defaults/main.yml`.
 
 ## Dependencies
 
-- [saucelabs-ansible.pip](https://github.com/saucelabs-ansible/pip)
+- [ansiblebit.pip](https://github.com/ansiblebit/pip)
 
 
 ## Playbooks
@@ -57,11 +58,11 @@ Example:
         - role: awscli
           awscli_profiles:
             default:
-              aws_access_key_id: AKIAIOSFODNN7EXAMPLE
-              aws_secret_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+              aws_access_key_id: EXAMPLE
+              aws_secret_access_key: EXAMPLEKEY
             user2:
-              aws_access_key_id: AKIAI44QH8DHBEXAMPLE
-              aws_secret_access_key: je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+              aws_access_key_id: EXAMPLE
+              aws_secret_access_key: EXAMPLEKEY
           awscli_configuration:
             default:
               region: us-west-2
@@ -88,8 +89,8 @@ This would generate the following configuration files:
 
     # ~ec2-user/.aws/credentials
     [default]
-    aws_access_key_id=AKIAIOSFODNN7EXAMPLE
-    aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    aws_access_key_id=EXAMPLE
+    aws_secret_access_key=EXAMPLEKEY
 
     # ~ec2-user/.aws/config
     [default]
@@ -99,12 +100,12 @@ This would generate the following configuration files:
 
     # ~vagrant/.aws/credentials
     [default]
-    aws_access_key_id=AKIAIOSFODNN7EXAMPLE
-    aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    aws_access_key_id=EXAMPLE
+    aws_secret_access_key=EXAMPLEKEY
 
     [user2]
-    aws_access_key_id=AKIAI44QH8DHBEXAMPLE
-    aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+    aws_access_key_id=EXAMPLE
+    aws_secret_access_key=EXAMPLEKEY
 
     # ~vagrant/.aws/config
     [default]
@@ -163,8 +164,3 @@ $ vagrant ssh trusty64.vagrant.dev
 
 - [AWS command line interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
 - [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
-
-
-## Author Information
-
-- [steenzout](https://github.com/steenzout/)
