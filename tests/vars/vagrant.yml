@@ -15,7 +15,7 @@ awscli_configuration:
     region: us-east-1
     output: text
 awscli_users:
-  "{{ ansible_ssh_user }}":
+  "{{ ansible_ssh_user | default(ansible_user) }}":
     profiles:
       - default
       - user2
@@ -23,4 +23,4 @@ awscli_users:
       default: default
       user2: conf_east1_text
 
-test_user: "{{ ansible_ssh_user }}"
+test_user: "{{ ansible_ssh_user | default(ansible_user) }}"
