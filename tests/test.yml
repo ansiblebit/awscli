@@ -20,10 +20,10 @@
 
   pre_tasks:
     - include_vars: vars/vagrant.yml
-      when: "{{ env == 'vagrant' }}"
+      when: env == 'vagrant'
 
     - include_vars: vars/travis.yml
-      when: "{{ env == 'travis' }}"
+      when: env == 'travis'
 
   roles:
     - role: awscli
