@@ -1,4 +1,5 @@
-tests/dependencies
+*.retry
+**/roles/*
 
 # Created by https://www.gitignore.io
 
