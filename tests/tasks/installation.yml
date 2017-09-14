@@ -9,8 +9,9 @@
   changed_when: no
 
 - name: check awscli version
-  command: python -c 'import awscli; print awscli.__version__'
+  command: "{{ ansible_python_interpreter | default('python2.7') }} -c 'import awscli; print awscli.__version__'"
   register: test
   changed_when: no
-  failed_when: test is defined and test.stdout.find("{{ awscli_version }}") == -1
-  sudo: yes
+  failed_when: test is defined and
+               test.stdout.find(awscli_version) == -1
+  become: yes
