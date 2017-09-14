@@ -22,7 +22,7 @@
     dest="/home/{{ test_user }}/.aws/config.expected"
     owner="{{ test_user }}"
     group="{{ test_user }}"
-  sudo: yes
+  become: yes
   changed_when: no
 
 - name: ensure config was generated as expected
