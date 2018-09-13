@@ -19,5 +19,3 @@ galaxy_info:
     - cloud
     - aws
     - s3
-dependencies:
-  - ansiblebit.pip
