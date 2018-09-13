@@ -6,13 +6,18 @@
 
 - include: debug.yml
   when: debug | default(false)
-  tags: debug
+  tags: 
+    - debug
+    - never
 
 - include: validation.yml
-  tags: validation
+  tags: 
+    - validation
+    - never
 
 - include: installation.yml
-  tags: installation
-
+  tags: 
+    - installation
+    - never 
 - include: configuration.yml
   tags: configuration
